@@ -17,15 +17,12 @@ class App extends Component {
 
           <div className="todo-list">
             <ul>
-              <li>
-                <input type="checkbox" />Create Static UI
-              </li>
-              <li>
-                <input type="checkbox" />Create Initial State
-              </li>
-              <li>
-                <input type="checkbox" />Use state to render UI
-              </li>
+              {this.props.todos.map(todo =>
+                <li key={todo.id}>
+                  <input type="checkbox" defaultChecked={todo.isComplete} />
+                  {todo.name}
+                </li>
+              )}
             </ul>
           </div>
         </div>
